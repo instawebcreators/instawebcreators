@@ -1,0 +1,200 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+h1, h2, h3, p {
+    margin: 0 0 20px 0;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5em;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon .line {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: #fff;
+    padding: 10px;
+    display: block;
+}
+
+.nav-links.show {
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #1e1e1e;
+    width: 100%;
+    text-align: center;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    padding: 100px 20px;
+    background: url('https://source.unsplash.com/1600x900/?night,city') no-repeat center center/cover;
+    color: #fff;
+}
+
+.cta-btn {
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1b1b1b;
+}
+
+/* Pricing Section */
+.pricing {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #2b2b2b;
+}
+
+.price-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #3b3b3b;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1b1b1b;
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .price-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media (max-width: 480px) {
+    /* Burger menu icon should be visible */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Navbar links should be hidden by default and displayed as a column when the menu is active */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* When the menu is active, show the links and ensure they stack vertically */
+    .nav-links.show {
+        display: flex;
+    }
+
+    /* Price cards should be stacked vertically with centered content */
+    .price-cards {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px; /* Ensure no overflow due to padding */
+    }
+
+    /* Ensure cards take full width on small screens */
+    .card {
+        width: 100%;
+        max-width: 300px; /* Adjust max-width to prevent overflow */
+        margin: 10px 0; /* Add some space between cards */
+    }
+
+    /* Ensure other sections have no overflow */
+    .intro, .about, .pricing, .contact, footer {
+        padding: 15px; /* Adjust padding for better fit on small screens */
+    }
+
+    /* Make sure the body does not overflow horizontally */
+    body {
+        overflow-x: hidden;
+    }
+}
+
